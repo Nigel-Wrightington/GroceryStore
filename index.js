@@ -27,7 +27,14 @@ const inventory = [
  */
 function logNames(items) {
   // TODO: use `forEach`
+const itemList = items.forEach(itemName => console.log(itemName.name));
+
 }
+
+
+
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -35,7 +42,17 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
+
+const upperCase = [items.map(element => element.name.toUpperCase())];
+
+return upperCase;
+
 }
+
+
+
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -44,7 +61,21 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  const searchId =id;
+  const foundItem = items.find(item=> item.id === searchId);
+  if(foundItem){
+    return foundItem;
+  }else{
+    console.log("The item was not found!");
+  }
+
+
+
 }
+
+
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -53,7 +84,23 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+for(let index = 0; index < items.length; index++){
+const itemName = name;
+if(items[index].name === itemName){
+  return items[index].price;
 }
+
+}
+}
+
+
+
+
+
+
+
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -62,7 +109,21 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  const inputCat = category;
+const productCat = [items.filter(category => category.category === inputCat)];
+if (productCat){
+  return productCat;
+}else{
+  console.log("Not recognized bro");
 }
+
+
+}
+
+
+
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -70,7 +131,18 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+const itemCount = items.reduce((items, newItem,) => items += newItem.quantity, 0);
+return itemCount;
+
+
+
+
+
 }
+
+
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -78,7 +150,30 @@ function countItems(items) {
  */
 function getTotalPrice(items) {
   // TODO: use `reduce`
+  
+const totalCost = items.reduce((accu, product) => accu + (product.price * product.quantity), 0);
+return totalCost;
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // === READ BUT DO NOT CHANGE THE CODE BELOW ===
 
